@@ -1,35 +1,54 @@
 package com.unforgeable.foc.entities;
 
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.util.TimeUtil;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.NeutralMob;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.network.NetworkHooks;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class Nisse extends Entity {
-    public Nisse(EntityType<?> p_19870_, Level level) {
-        super(p_19870_, level);
+import java.util.UUID;
+
+public class Nisse extends AbstractGolem implements NeutralMob {
+    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
+    private int angerTime = 0;
+    private UUID angerTarget = null;
+
+    protected Nisse(EntityType<? extends Nisse> entityType, Level level) {
+        super(entityType, level);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0).add(Attributes.MOVEMENT_SPEED, 0.25);
     }
 
     @Override
-    protected void defineSynchedData() {
-
+    public int getRemainingPersistentAngerTime() {
+        return this.angerTime;
     }
 
     @Override
-    protected void readAdditionalSaveData(@NotNull CompoundTag data) {
+    public void setRemainingPersistentAngerTime(int time) {
+        this.angerTime = time;
+    }
 
+    @Nullable
+    @Override
+    public UUID getPersistentAngerTarget() {
+        return this.angerTarget;
     }
 
     @Override
-    protected void addAdditionalSaveData(@NotNull CompoundTag data) {
-
+    public void setPersistentAngerTarget(@Nullable UUID target) {
+        this.angerTarget = target;
     }
 
     @Override
-    public @NotNull Packet<?> getAddEntityPacket() {
-        return NetworkHooks.getEntitySpawningPacket(this);
+    public void startPersistentAngerTimer() {
+        this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
     }
 }
