@@ -18,7 +18,7 @@ public class Nisse extends AbstractGolem implements NeutralMob {
     private int angerTime = 0;
     private UUID angerTarget = null;
 
-    protected Nisse(EntityType<? extends Nisse> entityType, Level level) {
+    public Nisse(EntityType<? extends Nisse> entityType, Level level) {
         super(entityType, level);
     }
 

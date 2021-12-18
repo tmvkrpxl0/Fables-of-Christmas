@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Foc.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class FocCommonBusEventListener {
+public class FocCommonModListener {
 
     @SubscribeEvent
     public static void onRegisterAttributes(EntityAttributeCreationEvent event) {

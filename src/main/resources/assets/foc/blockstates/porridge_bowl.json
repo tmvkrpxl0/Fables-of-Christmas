@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "porridge_bite=0": {
+      "model": "foc:block/porridge_bowl"
+    },
+    "porridge_bite=1": {
+      "model": "foc:block/porridge_bowl_1"
+    },
+    "porridge_bite=2": {
+      "model": "foc:block/porridge_bowl_2"
+    },
+    "porridge_bite=3": {
+      "model": "foc:block/porridge_bowl_3"
+    },
+    "porridge_bite=4": {
+      "model": "foc:block/porridge_bowl_4"
+    },
+    "porridge_bite=5": {
+      "model": "foc:block/porridge_bowl_5"
+    },
+    "porridge_bite=6": {
+      "model": "foc:block/porridge_bowl_6"
+    },
+    "porridge_bite=7": {
+      "model": "foc:block/porridge_bowl_7"
+    },
+    "porridge_bite=8": {
+      "model": "foc:block/porridge_bowl_8"
+    }
+  }
+}
