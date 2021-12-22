@@ -6,8 +6,7 @@ import com.unforgeable.foc.tabs.FocTabs;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,8 +23,54 @@ public class FocBlocks {
 
 
     //FIRST TESTING BLOCK//
-    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(2.0F).sound(SoundType.STONE)), FocTabs.FOC_TAB);
+    public static final RegistryObject<Block> POHUTUKAWA_LOG = registerBlock("pohutukawa_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_LOG_STRIPPED = registerBlock("pohutukawa_log_stripped",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_WOOD = registerBlock("pohutukawa_wood",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_WOOD_STRIPPED = registerBlock("pohutukawa_wood_stripped",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_LEAVES = registerBlock("pohutukawa_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.HARD_CROP)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_LEAVES_FLOWERS = registerBlock("pohutukawa_leaves_flowers",
+            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.HARD_CROP)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_PLANKS = registerBlock("pohutukawa_planks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
+
+
+
+    public static final RegistryObject<Block> POHUTUKAWA_DOOR = registerBlock("pohutukawa_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).strength(0.5F, 2.0F)),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_TRAPDOOR = registerBlock("pohutukawa_traodoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).strength(0.5F, 2.0F)),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_STAIRS = registerBlock( "pohutukawa_stairs",
+            () -> new StairBlock(() -> Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(0.5F, 2.0F)), FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_SLAB = registerBlock("pohutukawa_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SNOW)),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_FENCE = registerBlock("pohutukawa_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.4F, 2.5F).noOcclusion()),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_FENCE_GATE = registerBlock("pohutukawa_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.4F, 2.5F).noOcclusion()),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_PRESSURE_PLATE = registerBlock("pohutukawa_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,BlockBehaviour.Properties.of
+                    (Material.WOOD).strength(0.4F, 2.5F).noOcclusion()),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_BUTTON = registerBlock("pohutukawa_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.4F, 2.5F).noOcclusion()),FocTabs.FOC_TAB);
 
     //Registering Block Item of porridge bowl is done in FocItems manually
     //But it may be able to be moved to here
