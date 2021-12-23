@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "foc:block/pohutukawa_planks",
+        "top": "foc:block/pohutukawa_planks",
+        "side": "foc:block/pohutukawa_planks"
+    }
+}

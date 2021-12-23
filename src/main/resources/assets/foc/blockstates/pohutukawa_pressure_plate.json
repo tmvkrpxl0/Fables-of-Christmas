@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "foc:block/pohutukawa_pressure_plate_up" },
+        "powered=true": { "model": "foc:block/pohutukawa_pressure_plate_down" }
+    }
+}

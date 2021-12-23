@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "foc:block/pohutukawa_door_bottom",
+        "top": "foc:block/pohutukawa_door_top"
+    }
+}

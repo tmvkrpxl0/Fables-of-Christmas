@@ -16,8 +16,7 @@ public class FocItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Foc.MODID);
 
     //TEST ITEM//
-    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item",
-            () -> new Item(new Item.Properties().tab(FocTabs.FOC_TAB)));
+
 
     public static final RegistryObject<Item> PORRIDGE_BOWL = ITEMS.register("porridge_bowl",
             () -> new BlockItem(FocBlocks.PORRIDGE_BOWL.get(), new Item.Properties().stacksTo(1).tab(FocTabs.FOC_TAB)));

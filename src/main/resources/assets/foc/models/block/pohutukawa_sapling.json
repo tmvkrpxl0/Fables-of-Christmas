@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "foc:block/pohutukawa_sapling"
+    }
+}

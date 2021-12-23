@@ -1,6 +1,7 @@
 package com.unforgeable.foc;
 
 import com.unforgeable.foc.blocks.FocBlocks;
+import com.unforgeable.foc.client.renderers.RenderLayers;
 import com.unforgeable.foc.entities.FocEntityTypes;
 import com.unforgeable.foc.items.FocItems;
 import net.minecraft.world.level.block.Block;
@@ -44,6 +45,7 @@ public class Foc {
         FocEntityTypes.register(MOD_BUS);
         FocBlocks.register(MOD_BUS);
         FocItems.register(MOD_BUS);
+        RenderLayers.safeRunClient();
 
     }
 

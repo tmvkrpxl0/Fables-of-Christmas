@@ -3,10 +3,13 @@ package com.unforgeable.foc.blocks;
 import com.unforgeable.foc.Foc;
 import com.unforgeable.foc.items.FocItems;
 import com.unforgeable.foc.tabs.FocTabs;
+import com.unforgeable.foc.world.gen.PohutukawaTreeGrower;
+import com.unforgeable.foc.world.gen.features.FocFeatures;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.SpruceTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -36,10 +39,10 @@ public class FocBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
 
     public static final RegistryObject<Block> POHUTUKAWA_LEAVES = registerBlock("pohutukawa_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.HARD_CROP)), FocTabs.FOC_TAB);
+            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), FocTabs.FOC_TAB);
 
-    public static final RegistryObject<Block> POHUTUKAWA_LEAVES_FLOWERS = registerBlock("pohutukawa_leaves_flowers",
-            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.HARD_CROP)), FocTabs.FOC_TAB);
+    public static final RegistryObject<Block> POHUTUKAWA_FLOWERING_LEAVES = registerBlock("pohutukawa_flowering_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).noOcclusion()), FocTabs.FOC_TAB);
 
     public static final RegistryObject<Block> POHUTUKAWA_PLANKS = registerBlock("pohutukawa_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
@@ -49,7 +52,7 @@ public class FocBlocks {
     public static final RegistryObject<Block> POHUTUKAWA_DOOR = registerBlock("pohutukawa_door",
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).strength(0.5F, 2.0F)),FocTabs.FOC_TAB);
 
-    public static final RegistryObject<Block> POHUTUKAWA_TRAPDOOR = registerBlock("pohutukawa_traodoor",
+    public static final RegistryObject<Block> POHUTUKAWA_TRAPDOOR = registerBlock("pohutukawa_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).strength(0.5F, 2.0F)),FocTabs.FOC_TAB);
 
     public static final RegistryObject<Block> POHUTUKAWA_STAIRS = registerBlock( "pohutukawa_stairs",
@@ -71,6 +74,15 @@ public class FocBlocks {
 
     public static final RegistryObject<Block> POHUTUKAWA_BUTTON = registerBlock("pohutukawa_button",
             () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.4F, 2.5F).noOcclusion()),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_SAPLING = registerBlock("pohutukawa_sapling",
+            () ->  new SaplingBlock(new PohutukawaTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission()
+                    .randomTicks().instabreak().sound(SoundType.GRASS)),FocTabs.FOC_TAB);
+
+  //  public static final RegistryObject<Block> POHUTUKAWA_SIGN = registerBlock("pohutukawa_sign",
+   //         () -> new StandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.4F, 2.5F).noOcclusion().sound(SoundType.WOOD),FocWoodTypes.POHUTUKAWA),FocTabs.FOC_TAB);
+
+
 
     //Registering Block Item of porridge bowl is done in FocItems manually
     //But it may be able to be moved to here

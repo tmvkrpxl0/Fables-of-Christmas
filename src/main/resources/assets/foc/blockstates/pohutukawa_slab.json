@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "foc:block/pohutukawa_slab_bottom" },
+        "type=top": { "model": "foc:block/pohutukawa_slab_top" },
+        "type=double": { "model": "foc:block/pohutukawa_planks" }
+    }
+}
