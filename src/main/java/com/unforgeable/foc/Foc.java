@@ -1,11 +1,17 @@
 package com.unforgeable.foc;
 
 import com.unforgeable.foc.blocks.FocBlocks;
+import com.unforgeable.foc.blocks.FocWoodTypes;
 import com.unforgeable.foc.client.renderers.RenderLayers;
 import com.unforgeable.foc.entities.FocEntityTypes;
 import com.unforgeable.foc.items.FocItems;
+import com.unforgeable.foc.tileentities.FocBlockEntities;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -13,6 +19,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -45,12 +52,16 @@ public class Foc {
         FocEntityTypes.register(MOD_BUS);
         FocBlocks.register(MOD_BUS);
         FocItems.register(MOD_BUS);
+        FocBlockEntities.register(MOD_BUS);
         RenderLayers.safeRunClient();
 
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+
         // some preinit code
+
+        WoodType.register(FocWoodTypes.POHUTUKAWA);
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
@@ -75,6 +86,24 @@ public class Foc {
     public void onServerStarting(ServerStartingEvent event) {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+
+
+            BlockEntityRenderers.register(FocBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+            Sheets.addWoodType(FocWoodTypes.POHUTUKAWA);
+
+
+
+
+
+
+        });
+
+
+       // RenderingRegistry.registerEntityRenderingHandler(FocBlockEntityTypes.POHUTUKAWA_BOAT.get(), FocBoatRenderer::new);
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD

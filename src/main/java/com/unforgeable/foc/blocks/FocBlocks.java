@@ -77,10 +77,11 @@ public class FocBlocks {
             () ->  new SaplingBlock(new PohutukawaTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission()
                     .randomTicks().instabreak().sound(SoundType.GRASS)),FocTabs.FOC_TAB);
 
-  //  public static final RegistryObject<Block> POHUTUKAWA_SIGN = registerBlock("pohutukawa_sign",
-   //         () -> new StandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.4F, 2.5F).noOcclusion().sound(SoundType.WOOD),FocWoodTypes.POHUTUKAWA),FocTabs.FOC_TAB);
+    public static final RegistryObject<Block> POHUTUKAWA_STANDING_SIGN = BLOCKS.register("pohutukawa_sign",
+            () -> new FocStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD), FocWoodTypes.POHUTUKAWA));
 
-
+    public static final RegistryObject<Block> POHUTUKAWA_WALL_SIGN = BLOCKS.register("pohutukawa_wall_sign",
+            () -> new FocWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD), FocWoodTypes.POHUTUKAWA));
 
     //Registering Block Item of porridge bowl is done in FocItems manually
     //But it may be able to be moved to here

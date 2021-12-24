@@ -3,6 +3,7 @@
   "values": [
     "#minecraft:standing_signs",
     "#minecraft:wall_signs",
-	"foc:pohutukawa_sign"
+	"foc:pohutukawa_sign",
+	"foc:pohutukawa_wall_sign"
   ]
 }
