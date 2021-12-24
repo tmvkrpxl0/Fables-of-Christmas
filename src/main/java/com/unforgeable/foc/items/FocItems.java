@@ -3,6 +3,7 @@ package com.unforgeable.foc.items;
 import com.unforgeable.foc.Foc;
 import com.unforgeable.foc.blocks.FocBlocks;
 import com.unforgeable.foc.tabs.FocTabs;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -22,10 +23,16 @@ public class FocItems {
     public static final RegistryObject<Item> PORRIDGE_BOWL = ITEMS.register("porridge_bowl",
             () -> new BlockItem(FocBlocks.PORRIDGE_BOWL.get(), new Item.Properties().stacksTo(1).tab(FocTabs.FOC_TAB)));
 
-    public static final RegistryObject<Item> POHUTUKAWA_SIGN = ITEMS.register("pohutukawa_sign",
+    public static final RegistryObject<Item> BUCKET_O_CHICKEN = ITEMS.register("bucket_o_chicken",
+            () -> new Item(new Item.Properties().stacksTo(1).food(
+                    new FoodProperties.Builder().nutrition(10).saturationMod(1.5f).build()).tab(FocTabs.FOC_TAB)));
+
+
+
+/*    public static final RegistryObject<Item> POHUTUKAWA_SIGN = ITEMS.register("pohutukawa_sign",
             () -> new SignItem(new Item.Properties().tab(FocTabs.FOC_TAB),
                     FocBlocks.POHUTUKAWA_STANDING_SIGN.get(), FocBlocks.POHUTUKAWA_WALL_SIGN.get()));
-
+*/
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -45,6 +45,9 @@ public class FocBlocks {
     public static final RegistryObject<Block> POHUTUKAWA_PLANKS = registerBlock("pohutukawa_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(0.5F, 2.0F).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
 
+    public static final RegistryObject<Block> POHUTUKAWA_BOOKSHELF = registerBlock("pohutukawa_bookshelf",
+            () -> new FocBookshelfBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(0.5F, 2.0F).lightLevel((p_50828_) -> { return 6; }).sound(SoundType.WOOD)), FocTabs.FOC_TAB);
+
 
 
     public static final RegistryObject<Block> POHUTUKAWA_DOOR = registerBlock("pohutukawa_door",
@@ -76,6 +79,11 @@ public class FocBlocks {
     public static final RegistryObject<Block> POHUTUKAWA_SAPLING = registerBlock("pohutukawa_sapling",
             () ->  new SaplingBlock(new PohutukawaTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission()
                     .randomTicks().instabreak().sound(SoundType.GRASS)),FocTabs.FOC_TAB);
+
+    public static final RegistryObject<Block> POHUTUKAWA_SAPLING_POTTED = BLOCKS.register("pohutukawa_sapling_potted",
+            () -> new FlowerPotBlock(POHUTUKAWA_SAPLING.get(),BlockBehaviour.Properties.of(Material.CLAY).strength(2.0F).noOcclusion().sound(SoundType.BONE_BLOCK)));
+
+
 
     public static final RegistryObject<Block> POHUTUKAWA_STANDING_SIGN = BLOCKS.register("pohutukawa_sign",
             () -> new FocStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD), FocWoodTypes.POHUTUKAWA));

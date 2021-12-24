@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CWC",
+    "CCC",
+    " B "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:bread"
+    },
+	"C": {
+      "item": "minecraft:cooked_chicken"
+    },
+	"B": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "foc:bucket_o_chicken"
+  }
+}

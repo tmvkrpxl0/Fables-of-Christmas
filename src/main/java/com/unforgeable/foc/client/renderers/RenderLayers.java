@@ -19,6 +19,7 @@ public class RenderLayers {
         ItemBlockRenderTypes.setRenderLayer(FocBlocks.POHUTUKAWA_DOOR.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(FocBlocks.POHUTUKAWA_SAPLING.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(FocBlocks.PORRIDGE_BOWL.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(FocBlocks.POHUTUKAWA_SAPLING_POTTED.get(), RenderType.cutoutMipped());
     }
 
     public static void safeRunClient() {

@@ -3,6 +3,7 @@
 "itemGroup.foc_tab": "Fables Of Christmas",
 
 "item.foc.porridge_bowl": "Bowl of Porridge",
+"item.foc.bucket_o_chicken": "Bucket of Chicken",
 	
 "block.foc.pohutukawa_log": "Pohutukawa Log",
 "block.foc.pohutukawa_log_stripped": "Stripped Pohutukawa Log",
@@ -20,7 +21,8 @@
 "block.foc.pohutukawa_button": "Pohutukawa Button",
 "block.foc.pohutukawa_bookshelf": "Pohutukawa Bookshelf",
 "block.foc.pohutukawa_door": "Pohutukawa Door",
-"block.foc.pohutukawa_trapdoor": "Pohutukawa Trapdoor"
+"block.foc.pohutukawa_trapdoor": "Pohutukawa Trapdoor",
+  "block.foc.pohutukawa_sapling_potted": "Potted Pohutukawa Sapling"
 
 }	
 	
