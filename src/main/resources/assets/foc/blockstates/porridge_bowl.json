@@ -1,7 +1,7 @@
 {
   "variants": {
     "porridge_bite=0": {
-      "model": "foc:block/porridge_bowl"
+      "model": "foc:block/porridge_bowl_0"
     },
     "porridge_bite=1": {
       "model": "foc:block/porridge_bowl_1"
@@ -23,9 +23,6 @@
     },
     "porridge_bite=7": {
       "model": "foc:block/porridge_bowl_7"
-    },
-    "porridge_bite=8": {
-      "model": "foc:block/porridge_bowl_8"
     }
   }
 }

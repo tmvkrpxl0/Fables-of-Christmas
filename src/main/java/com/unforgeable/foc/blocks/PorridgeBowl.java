@@ -31,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 public class PorridgeBowl extends Block {
-    public static final int MAX_BITES = 8;
+    public static final int MAX_BITES = 7;
     public static final IntegerProperty REMAINING_BITES = IntegerProperty.create("porridge_bite", 0, MAX_BITES);
     public static VoxelShape BOWL_SHAPE = Shapes.or(
             Block.box(4.0, 0.0, 4.0, 12.0, 1.0, 12.0), //Base
@@ -60,7 +60,7 @@ public class PorridgeBowl extends Block {
 
     public PorridgeBowl(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(REMAINING_BITES, 8));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(REMAINING_BITES, MAX_BITES));
     }
 
     public static InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
