@@ -64,15 +64,13 @@ public class PorridgeBowl extends Block {
     }
 
     public static InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
-        if (!player.canEat(false)) {
+        int bites = state.getValue(REMAINING_BITES);
+        if (bites <= 0 || !player.canEat(false)) {
             return InteractionResult.PASS;
         } else {
             player.getFoodData().eat(2, 0.1F);
-            int bites = state.getValue(REMAINING_BITES);
             level.gameEvent(player, GameEvent.EAT, pos);
-            if (bites > 0) {
-                level.setBlock(pos, state.setValue(REMAINING_BITES, bites - 1), 3);
-            }
+            level.setBlock(pos, state.setValue(REMAINING_BITES, bites - 1), 3);
             return InteractionResult.SUCCESS;
         }
     }

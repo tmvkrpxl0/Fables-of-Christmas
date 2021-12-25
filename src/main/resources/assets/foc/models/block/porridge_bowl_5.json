@@ -6,7 +6,7 @@
 		"2": "foc:block/porridge_north_south",
 		"3": "foc:block/porridge_west_east",
 		"4": "foc:block/porridge_bottom",
-		"particle": "block/porridge"
+		"particle": "foc:block/porridge"
 	},
 	"elements": [
 		{
@@ -46,58 +46,6 @@
 			}
 		},
 		{
-			"from": [5, 2, 5],
-			"to": [11, 2, 11],
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"up": {"uv": [0, 0, 6, 6], "texture": "#missing"},
-				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [5, 2.5, 5],
-			"to": [11, 2.5, 11],
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"up": {"uv": [0, 0, 6, 6], "texture": "#missing"},
-				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [5, 3, 5],
-			"to": [11, 3, 11],
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"up": {"uv": [0, 0, 6, 6], "texture": "#missing"},
-				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [5, 3.5, 5],
-			"to": [11, 3.5, 11],
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"up": {"uv": [0, 0, 6, 6], "texture": "#missing"},
-				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
 			"from": [5, 4, 5],
 			"to": [11, 4, 11],
 			"faces": {
@@ -107,60 +55,6 @@
 				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
 				"up": {"uv": [2, 2, 14, 14], "texture": "#0"},
 				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [5, 4.5, 5],
-			"to": [11, 4.5, 11],
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"up": {"uv": [2, 2, 14, 14], "texture": "#missing"},
-				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [5, 5, 5],
-			"to": [11, 5, 11],
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
-				"up": {"uv": [2, 2, 14, 14], "texture": "#missing"},
-				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [8.5, 5, 3.5],
-			"to": [8.5, 7, 12.5],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 5, 8]},
-			"color": 0,
-			"faces": {
-				"north": {"uv": [0, 0, 0, 2], "texture": "#missing"},
-				"east": {"uv": [1, 14, 10, 16], "texture": "#missing"},
-				"south": {"uv": [0, 0, 0, 2], "texture": "#missing"},
-				"west": {"uv": [1, 14, 10, 16], "texture": "#missing"},
-				"up": {"uv": [0, 0, 0, 8], "texture": "#missing"},
-				"down": {"uv": [0, 0, 0, 8], "texture": "#missing"}
-			}
-		},
-		{
-			"from": [3.5, 5, 8.5],
-			"to": [12.5, 7, 8.5],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 5, 8]},
-			"color": 0,
-			"faces": {
-				"north": {"uv": [1, 14, 10, 16], "texture": "#missing"},
-				"east": {"uv": [0, 0, 0, 2], "texture": "#missing"},
-				"south": {"uv": [1, 14, 10, 16], "texture": "#missing"},
-				"west": {"uv": [0, 0, 0, 2], "texture": "#missing"},
-				"up": {"uv": [0, 0, 9, 0], "texture": "#missing"},
-				"down": {"uv": [0, 0, 9, 0], "texture": "#missing"}
 			}
 		},
 		{
