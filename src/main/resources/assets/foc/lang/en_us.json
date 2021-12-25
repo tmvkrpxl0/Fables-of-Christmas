@@ -1,30 +1,26 @@
 {
-	
-"itemGroup.foc_tab": "Fables Of Christmas",
-
-"item.foc.porridge_bowl": "Bowl of Porridge",
-"item.foc.bucket_o_chicken": "Bucket of Chicken",
-	
-"block.foc.pohutukawa_log": "Pohutukawa Log",
-"block.foc.pohutukawa_log_stripped": "Stripped Pohutukawa Log",
-"block.foc.pohutukawa_wood": "Pohutukawa Wood",
-"block.foc.pohutukawa_wood_stripped": "Stripped Pohutukawa Wood",
-"block.foc.pohutukawa_leaves": "Pohutukawa Leaves",
-"block.foc.pohutukawa_flowering_leaves": "Flowering Pohutukawa Leaves",
-"block.foc.pohutukawa_sapling": "Pohutukawa Sapling",
-"block.foc.pohutukawa_planks": "Pohutukawa Planks",
-"block.foc.pohutukawa_stairs": "Pohutukawa Stairs",
-"block.foc.pohutukawa_slab": "Pohutukawa Slab",
-"block.foc.pohutukawa_fence": "Pohutukawa Fence",
-"block.foc.pohutukawa_fence_gate": "Pohutukawa Fence Gate",
-"block.foc.pohutukawa_pressure_plate": "Pohutukawa Pressure Plate",
-"block.foc.pohutukawa_button": "Pohutukawa Button",
-"block.foc.pohutukawa_bookshelf": "Pohutukawa Bookshelf",
-"block.foc.pohutukawa_door": "Pohutukawa Door",
-"block.foc.pohutukawa_trapdoor": "Pohutukawa Trapdoor",
-  "block.foc.pohutukawa_sapling_potted": "Potted Pohutukawa Sapling"
-
-}	
+  "itemGroup.foc_tab": "Fables Of Christmas",
+  "item.foc.bucket_o_chicken": "Bucket of Chicken",
+  "block.foc.pohutukawa_log": "Pohutukawa Log",
+  "block.foc.pohutukawa_log_stripped": "Stripped Pohutukawa Log",
+  "block.foc.pohutukawa_wood": "Pohutukawa Wood",
+  "block.foc.pohutukawa_wood_stripped": "Stripped Pohutukawa Wood",
+  "block.foc.pohutukawa_leaves": "Pohutukawa Leaves",
+  "block.foc.pohutukawa_flowering_leaves": "Flowering Pohutukawa Leaves",
+  "block.foc.pohutukawa_sapling": "Pohutukawa Sapling",
+  "block.foc.pohutukawa_planks": "Pohutukawa Planks",
+  "block.foc.pohutukawa_stairs": "Pohutukawa Stairs",
+  "block.foc.pohutukawa_slab": "Pohutukawa Slab",
+  "block.foc.pohutukawa_fence": "Pohutukawa Fence",
+  "block.foc.pohutukawa_fence_gate": "Pohutukawa Fence Gate",
+  "block.foc.pohutukawa_pressure_plate": "Pohutukawa Pressure Plate",
+  "block.foc.pohutukawa_button": "Pohutukawa Button",
+  "block.foc.pohutukawa_bookshelf": "Pohutukawa Bookshelf",
+  "block.foc.pohutukawa_door": "Pohutukawa Door",
+  "block.foc.pohutukawa_trapdoor": "Pohutukawa Trapdoor",
+  "block.foc.pohutukawa_sapling_potted": "Potted Pohutukawa Sapling",
+  "block.foc.porridge_bowl": "Bowl of Porridge"
+}
 	
 
 

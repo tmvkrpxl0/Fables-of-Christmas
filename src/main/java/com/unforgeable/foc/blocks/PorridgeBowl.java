@@ -99,7 +99,7 @@ public class PorridgeBowl extends Block {
 
     @Override
     public boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
-        return !level.getBlockState(pos.below()).getMaterial().isSolid();
+        return level.getBlockState(pos.below()).getMaterial().isSolid();
     }
 
     @Override
@@ -109,7 +109,6 @@ public class PorridgeBowl extends Block {
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        //resetShape();
         return SHAPES[state.getValue(REMAINING_BITES)];
     }
 
@@ -131,6 +130,7 @@ public class PorridgeBowl extends Block {
             nearBy = serverLevel.getEntitiesOfClass(Nisse.class, area).size();
         }
         Nisse nisse = new Nisse(FocEntityTypes.NISSE.get(), serverLevel);
+        nisse.setPoint(pos);
         if (nearBy < maxNearby) {
             nisse.moveTo(x, y, z, serverLevel.random.nextFloat() * 360.0F, 0.0F);
             boolean succeed = serverLevel.tryAddFreshEntityWithPassengers(nisse);//Not sure if it's necessary, but it's used by Spawner
