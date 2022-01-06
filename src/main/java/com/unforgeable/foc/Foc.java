@@ -4,6 +4,7 @@ import com.unforgeable.foc.blocks.FocBlocks;
 import com.unforgeable.foc.blocks.FocWoodTypes;
 import com.unforgeable.foc.client.renderers.RenderLayers;
 import com.unforgeable.foc.entities.FocEntityTypes;
+import com.unforgeable.foc.entities.goal.FocPOI;
 import com.unforgeable.foc.items.FocItems;
 import com.unforgeable.foc.tileentities.FocBlockEntities;
 import net.minecraft.client.renderer.Sheets;
@@ -52,6 +53,7 @@ public class Foc {
         FocEntityTypes.register(MOD_BUS);
         FocBlocks.register(MOD_BUS);
         FocItems.register(MOD_BUS);
+        FocPOI.register(MOD_BUS);
         FocBlockEntities.register(MOD_BUS);
         RenderLayers.safeRunClient();
 

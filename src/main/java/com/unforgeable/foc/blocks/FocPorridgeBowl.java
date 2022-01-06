@@ -1,5 +1,6 @@
 package com.unforgeable.foc.blocks;
 
+import com.google.common.collect.Sets;
 import com.unforgeable.foc.entities.FocEntityTypes;
 import com.unforgeable.foc.entities.Nisse;
 import net.minecraft.core.BlockPos;
@@ -28,11 +29,15 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedList;
 import java.util.Random;
+import java.util.Set;
 
-public class PorridgeBowl extends Block {
+public class FocPorridgeBowl extends Block {
     public static final int MAX_BITES = 7;
     public static final IntegerProperty REMAINING_BITES = IntegerProperty.create("porridge_bite", 0, MAX_BITES);
+    public static Set<BlockState> ALL_EXCEPT_EMPTY;
+
     public static VoxelShape BOWL_SHAPE = Shapes.or(
             Block.box(4.0, 0.0, 4.0, 12.0, 1.0, 12.0), //Base
 
@@ -58,9 +63,14 @@ public class PorridgeBowl extends Block {
     private final int spawnRange = 3;
     private final int maxNearby = 5;
 
-    public PorridgeBowl(Properties properties) {
+    public FocPorridgeBowl(Properties properties) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(REMAINING_BITES, MAX_BITES));
+        LinkedList<BlockState> states = new LinkedList<>(this.getStateDefinition().getPossibleStates());
+        states.removeIf(blockState ->
+                blockState.getValue(REMAINING_BITES) == 0
+        );
+        ALL_EXCEPT_EMPTY = Sets.newHashSet(states);
     }
 
     public static InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
@@ -130,7 +140,6 @@ public class PorridgeBowl extends Block {
             nearBy = serverLevel.getEntitiesOfClass(Nisse.class, area).size();
         }
         Nisse nisse = new Nisse(FocEntityTypes.NISSE.get(), serverLevel);
-        nisse.setPoint(pos);
         if (nearBy < maxNearby) {
             nisse.moveTo(x, y, z, serverLevel.random.nextFloat() * 360.0F, 0.0F);
             boolean succeed = serverLevel.tryAddFreshEntityWithPassengers(nisse);//Not sure if it's necessary, but it's used by Spawner
@@ -140,5 +149,10 @@ public class PorridgeBowl extends Block {
                 serverLevel.players().forEach(player -> player.connection.send(packet));
             }
         }
+    }
+
+    public static boolean porridgePredicate(LevelAccessor level, BlockPos blockPos) {
+        BlockState state = level.getBlockState(blockPos);
+        return state.getBlock() == FocBlocks.PORRIDGE_BOWL.get() && state.getValue(FocPorridgeBowl.REMAINING_BITES) > 0;
     }
 }
