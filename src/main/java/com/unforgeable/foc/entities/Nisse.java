@@ -59,7 +59,7 @@ public class Nisse extends AbstractGolem implements NeutralMob {
         super.tick();
         if (!this.level.isClientSide) {
             tickDespawn();
-            if (this.eatTime <= (FIND_BOWL_TIME)) {
+            if (this.getHealth() <= 2.0 || this.eatTime <= (FIND_BOWL_TIME)) {
                 AABB area = AABB.ofSize(this.position(), 2, 2, 2);
                 Optional<BlockPos> pos = BlockPos.betweenClosedStream(area).filter(blockPos -> FocPorridgeBowl.porridgePredicate(this.level, blockPos)).findAny();
                 if (pos.isPresent()) {
@@ -68,6 +68,7 @@ public class Nisse extends AbstractGolem implements NeutralMob {
                     int remaining = bowlState.getValue(FocPorridgeBowl.REMAINING_BITES);
                     BlockState newState = bowlState.setValue(FocPorridgeBowl.REMAINING_BITES, remaining - 1);
                     this.level.setBlockAndUpdate(bowlPos, newState);
+                    this.setHealth(this.getMaxHealth());
                     resetEatTime();
                 }
             }
@@ -137,9 +138,9 @@ public class Nisse extends AbstractGolem implements NeutralMob {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0, true));
-        this.goalSelector.addGoal(1, new FindBowlGoal(this, 2.0));
         this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 0.9, 32F));
-        this.goalSelector.addGoal(2, new NisseRandomStrollGoal(this, 0.6));
+        this.goalSelector.addGoal(3, new FindBowlGoal(this, 2.0));
+        this.goalSelector.addGoal(4, new NisseRandomStrollGoal(this, 0.6));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));

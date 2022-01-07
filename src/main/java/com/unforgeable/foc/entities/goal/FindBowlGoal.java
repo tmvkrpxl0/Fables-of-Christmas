@@ -18,7 +18,7 @@ public class FindBowlGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return nisse.getEatTime() <= Nisse.FIND_BOWL_TIME;
+        return nisse.getHealth() <= 2.0 || nisse.getEatTime() <= Nisse.FIND_BOWL_TIME;
     }
 
     @Override
